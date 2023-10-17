@@ -118,8 +118,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-The DefaultProfile parameter is not functional.
-Use the SubscriptionId parameter when available if executing the cmdlet against a different subscription.
+The credentials, account, tenant, and subscription used for communication with Azure.
 
 ```yaml
 Type: System.Management.Automation.PSObject
@@ -338,7 +337,7 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-`BODY <IRoleAssignmentDetail>`: The details for role assignment response.
+BODY <IRoleAssignmentDetail>: The details for role assignment response.
   - `DataTypeScope <String[]>`: Data Type Scope at which the role assignment is created.
   - `PrincipalId <String>`: Object ID of the AAD principal or security-group.
   - `PrincipalType <String>`: Type of the principal Id: User, Group or ServicePrincipal
@@ -347,7 +346,7 @@ To create the parameters described below, construct a hash table containing the 
   - `RoleId <String>`: Role Id of the Built-In Role
   - `UserName <String>`: User name.
 
-`INPUTOBJECT <INetworkAnalyticsIdentity>`: Identity Parameter
+INPUTOBJECT <INetworkAnalyticsIdentity>: Identity Parameter
   - `[DataProductName <String>]`: The data product resource name
   - `[DataTypeName <String>]`: The data type name.
   - `[Id <String>]`: Resource identity path

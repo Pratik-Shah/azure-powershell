@@ -23,9 +23,6 @@ List user roles associated with the data product.
 ### [New-AzNetworkAnalyticsDataProduct](New-AzNetworkAnalyticsDataProduct.md)
 Create data product resource.
 
-### [New-AzNetworkAnalyticsDataProductStorageAccountSasToken](New-AzNetworkAnalyticsDataProductStorageAccountSasToken.md)
-Generate sas token for storage account.
-
 ### [Remove-AzNetworkAnalyticsDataProduct](Remove-AzNetworkAnalyticsDataProduct.md)
 Delete data product resource.
 

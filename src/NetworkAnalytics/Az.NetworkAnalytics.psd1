@@ -11,7 +11,7 @@
   DotNetFrameworkVersion = '4.7.2'
   RequiredAssemblies = './bin/Az.NetworkAnalytics.private.dll'
   FormatsToProcess = './Az.NetworkAnalytics.format.ps1xml'
-  FunctionsToExport = 'Add-AzNetworkAnalyticsDataProductUserRole', 'Get-AzNetworkAnalyticsDataProduct', 'Get-AzNetworkAnalyticsDataProductRoleAssignment', 'New-AzNetworkAnalyticsDataProduct', 'New-AzNetworkAnalyticsDataProductStorageAccountSasToken', 'Remove-AzNetworkAnalyticsDataProduct', 'Remove-AzNetworkAnalyticsDataProductUserRole', '*'
+  FunctionsToExport = 'Add-AzNetworkAnalyticsDataProductUserRole', 'Get-AzNetworkAnalyticsDataProduct', 'Get-AzNetworkAnalyticsDataProductRoleAssignment', 'New-AzNetworkAnalyticsDataProduct', 'Remove-AzNetworkAnalyticsDataProduct', 'Remove-AzNetworkAnalyticsDataProductUserRole', '*'
   AliasesToExport = '*'
   PrivateData = @{
     PSData = @{

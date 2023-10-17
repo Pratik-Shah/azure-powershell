@@ -17,7 +17,7 @@ This directory contains the PowerShell module for the NetworkAnalytics service.
 This module was primarily generated via [AutoRest](https://github.com/Azure/autorest) using the [PowerShell](https://github.com/Azure/autorest.powershell) extension.
 
 ## Module Requirements
-- [Az.Accounts module](https://www.powershellgallery.com/packages/Az.Accounts/), version 2.7.5 or greater
+- [Az.Accounts module](https://www.powershellgallery.com/packages/Az.Accounts/), version 2.2.3 or greater
 
 ## Authentication
 AutoRest does not generate authentication code for the module. Authentication is handled via Az.Accounts by altering the HTTP payload before it is sent.
@@ -76,6 +76,18 @@ directive:
       verb: Invoke
       subject: ^RotateDataProductKey$
     remove: true
+  - where:
+      verb: New
+      subject: ^DataProductStorageAccountSasToken$
+    remove: true
+  - select: property
+    where:
+      property-name: ManagedResourceGroupConfigurationName
+    hide: true
+  - select: property
+    where:
+      property-name: ManagedResourceGroupConfigurationLocation
+    hide: true
   # Add 200 status code response for DataProduct delete operation.
   - from: swagger-document
     where: $.paths["/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.NetworkAnalytics/dataProducts/{dataProductName}"].delete.responses

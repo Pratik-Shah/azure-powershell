@@ -23,7 +23,10 @@ New-AzNetworkAnalyticsDataProduct -Name <String> -ResourceGroupName <String> -Lo
  [-NetworkaclIPRule <IIPRules[]>] [-NetworkaclVirtualNetworkRule <IVirtualNetworkRule[]>] [-Owner <String[]>]
  [-PrivateLinksEnabled <ControlState>] [-Product <String>] [-PublicNetworkAccess <ControlState>]
  [-Publisher <String>] [-PurviewAccount <String>] [-PurviewCollection <String>] [-Redundancy <ControlState>]
- [-Tag <Hashtable>] [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-SystemDataCreatedAt <DateTime>] [-SystemDataCreatedBy <String>] [-SystemDataCreatedByType <CreatedByType>]
+ [-SystemDataLastModifiedAt <DateTime>] [-SystemDataLastModifiedBy <String>]
+ [-SystemDataLastModifiedByType <CreatedByType>] [-Tag <Hashtable>] [-DefaultProfile <PSObject>] [-AsJob]
+ [-NoWait] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -146,8 +149,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-The DefaultProfile parameter is not functional.
-Use the SubscriptionId parameter when available if executing the cmdlet against a different subscription.
+The credentials, account, tenant, and subscription used for communication with Azure.
 
 ```yaml
 Type: System.Management.Automation.PSObject
@@ -496,6 +498,96 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -SystemDataCreatedAt
+The timestamp of resource creation (UTC).
+
+```yaml
+Type: System.DateTime
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -SystemDataCreatedBy
+The identity that created the resource.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -SystemDataCreatedByType
+The type of identity that created the resource.
+
+```yaml
+Type: Microsoft.Azure.PowerShell.Cmdlets.NetworkAnalytics.Support.CreatedByType
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -SystemDataLastModifiedAt
+The timestamp of resource last modification (UTC)
+
+```yaml
+Type: System.DateTime
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -SystemDataLastModifiedBy
+The identity that last modified the resource.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -SystemDataLastModifiedByType
+The type of identity that last modified the resource.
+
+```yaml
+Type: Microsoft.Azure.PowerShell.Cmdlets.NetworkAnalytics.Support.CreatedByType
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Tag
 Resource tags.
 
@@ -560,11 +652,11 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-`NETWORKACLIPRULE <IIPRules[]>`: IP rule with specific IP or IP range in CIDR format.
+NETWORKACLIPRULE <IIPRules[]>: IP rule with specific IP or IP range in CIDR format.
   - `Action <String>`: The action of virtual network rule.
   - `[Value <String>]`: IP Rules Value
 
-`NETWORKACLVIRTUALNETWORKRULE <IVirtualNetworkRule[]>`: Virtual Network Rule
+NETWORKACLVIRTUALNETWORKRULE <IVirtualNetworkRule[]>: Virtual Network Rule
   - `Id <String>`: Resource ID of a subnet
   - `[Action <String>]`: The action of virtual network rule.
   - `[State <String>]`: Gets the state of virtual network rule.
