@@ -80,14 +80,12 @@ directive:
       verb: New
       subject: ^DataProductStorageAccountSasToken$
     remove: true
-  - select: property
-    where:
-      property-name: ManagedResourceGroupConfigurationName
-    hide: true
-  - select: property
-    where:
-      property-name: ManagedResourceGroupConfigurationLocation
-    hide: true
+  - where:
+      model-name: RoleAssignmentDetail
+    set:
+      format-table:
+        exclude-properties:
+          - DataTypeScope
   # Add 200 status code response for DataProduct delete operation.
   - from: swagger-document
     where: $.paths["/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.NetworkAnalytics/dataProducts/{dataProductName}"].delete.responses

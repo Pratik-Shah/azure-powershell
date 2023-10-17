@@ -41,6 +41,22 @@ Describe 'New-AzNetworkAnalyticsDataProduct' {
         $job.Name | should -be $env.DataProductName
     }
 
+    It 'Add Data Product User Role' {
+        $job = Add-AzNetworkAnalyticsDataProductUserRole -ResourceGroupName $env.ResourceGroupName -DataProductName $env.DataProductName -PrincipalId $env.PrincipalId -Role $env.Role -RoleId $env.RoleId  -UserName $env.UserName -PrincipalType $env.PrincipalType  -DataTypeScope $env.DataTypeScope
+        $job.PrincipalId | should -be $env.PrincipalId
+    }
+
+    It 'List Data Product User Role by Data Product' {
+        $job = Get-AzNetworkAnalyticsDataProductRoleAssignment -ResourceGroupName $env.ResourceGroupName -DataProductName $env.DataProductName
+        $job.Count | Should -BeGreaterOrEqual 0
+    }
+
+    It 'Remove Data Product User Role' {
+        {
+            Remove-AzNetworkAnalyticsDataProductUserRole -ResourceGroupName $env.ResourceGroupName -DataProductName $env.DataProductName -Role $env.Role -PrincipalType $env.PrincipalType -RoleId $env.RoleId -PrincipalId $env.PrincipalId -DataTypeScope $env.DataTypeScope -RoleAssignmentId confciftidz4 -UserName $env.UserName
+        } | Should -Not -Throw
+    }
+
     It 'Delete DataProduct' {
         {
             $job = Remove-AzNetworkAnalyticsDataProduct -ResourceGroupName $env.ResourceGroupName -Name $env.DataProductName -AsJob

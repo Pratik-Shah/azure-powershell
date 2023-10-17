@@ -24,7 +24,7 @@ function setupEnv() {
     $env.Add("Product", "MCC")
     $env.Add("MajorVersion", "2.0.0")
     $env.Add("Publisher", "Microsoft")
-    $env.Add("Location", "southcentralus")
+    $env.Add("Location", "westcentralus")
     $env.Add("ResourceGroupName", "powershell-test")
 
     # Need to remove this     
@@ -51,6 +51,13 @@ function setupEnv() {
     $env.Add("NetworkaclDefaultAction", "Allow")
     $env.Add("IdentityType", "")
     $env.Add("IdentityUserAssignedIdentity", "")
+
+    $env.Add("PrincipalId","user@microsoft.com")
+    $env.Add("RoleId", " ")
+    $env.Add("Role", "Reader")
+    $env.Add("UserName", "User Name")
+    $env.Add("PrincipalType", "user")
+    $env.Add("DataTypeScope", "pwshdataproductinstance01")
 
     $envFile = 'env.json'
     if ($TestMode -eq 'live') {
