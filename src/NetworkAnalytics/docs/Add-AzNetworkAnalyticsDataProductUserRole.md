@@ -46,27 +46,18 @@ Assign role to the data product.
 
 ## EXAMPLES
 
-### Example 1: {{ Add title here }}
+### Example 1: Assign user role to the data product.
 ```powershell
-{{ Add code here }}
+ Add-AzNetworkAnalyticsDataProductUserRole -DataProductName "dataProductName" -ResourceGroupName "ResourceGroupName" -PrincipalId user@microsoft.com -Role Reader -RoleId " " -UserName "User Name" -PrincipalType user  -DataTypeScope "dataProductName"
 ```
 
 ```output
-{{ Add output here }}
+PrincipalId            PrincipalType Role   RoleAssignmentId RoleId UserName
+-----------            ------------- ----   ---------------- ------ --------
+user@microsoft.com     user          Reader confmq0f0zpu            User Name
 ```
 
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-{{ Add code here }}
-```
-
-```output
-{{ Add output here }}
-```
-
-{{ Add description here }}
+Assign user role to the data product.
 
 ## PARAMETERS
 
@@ -117,7 +108,8 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-The credentials, account, tenant, and subscription used for communication with Azure.
+The DefaultProfile parameter is not functional.
+Use the SubscriptionId parameter when available if executing the cmdlet against a different subscription.
 
 ```yaml
 Type: System.Management.Automation.PSObject
@@ -298,28 +290,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Azure.PowerShell.Cmdlets.NetworkAnalytics.Models.Api20231115.IRoleAssignmentDetail
 
 ## NOTES
-
-ALIASES
-
-COMPLEX PARAMETER PROPERTIES
-
-To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
-
-
-BODY <IRoleAssignmentCommonProperties>: The details for role assignment common properties.
-  - `DataTypeScope <String[]>`: Data Type Scope at which the role assignment is created.
-  - `PrincipalId <String>`: Object ID of the AAD principal or security-group.
-  - `PrincipalType <String>`: Type of the principal Id: User, Group or ServicePrincipal
-  - `Role <DataProductUserRole>`: Data Product role to be assigned to a user.
-  - `RoleId <String>`: Role Id of the Built-In Role
-  - `UserName <String>`: User name.
-
-INPUTOBJECT <INetworkAnalyticsIdentity>: Identity Parameter
-  - `[DataProductName <String>]`: The data product resource name
-  - `[DataTypeName <String>]`: The data type name.
-  - `[Id <String>]`: Resource identity path
-  - `[ResourceGroupName <String>]`: The name of the resource group. The name is case insensitive.
-  - `[SubscriptionId <String>]`: The ID of the target subscription.
 
 ## RELATED LINKS
 

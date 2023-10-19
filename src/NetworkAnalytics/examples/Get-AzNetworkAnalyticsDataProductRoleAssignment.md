@@ -1,22 +1,16 @@
-### Example 1: {{ Add title here }}
+### Example 1: List user role associated with the data product.
+
 ```powershell
-{{ Add code here }}
+ $UserRoles=Get-AzNetworkAnalyticsDataProductRoleAssignment -ResourceGroupName "ResourceGroupName" -DataProductName "pwshdp01"
+
+ $UserRoles.RoleAssignmentResponse| select PrincipalId,PrincipalType,RoleId,Role
 ```
 
 ```output
-{{ Add output here }}
+PrincipalId            PrincipalType RoleId                                   Role
+-----------            ------------- ------                                   ----
+user1@microsoft.com    User          opinsightsdpqjydom/pwshdp01/confc9uee8dm Viewer
+user2@microsoft.com    User          opinsightsdpqjydom/pwshdp01/confmq0f0zpu Viewer
 ```
 
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-{{ Add code here }}
-```
-
-```output
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
+List user role associated with the data product.

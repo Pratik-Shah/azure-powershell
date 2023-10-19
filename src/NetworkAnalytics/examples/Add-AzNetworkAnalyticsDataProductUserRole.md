@@ -1,22 +1,13 @@
-### Example 1: {{ Add title here }}
+### Example 1: Assign user role to the data product.
+
 ```powershell
-{{ Add code here }}
+ Add-AzNetworkAnalyticsDataProductUserRole -DataProductName "dataProductName" -ResourceGroupName "ResourceGroupName" -PrincipalId user@microsoft.com -Role Reader -RoleId " " -UserName "User Name" -PrincipalType user  -DataTypeScope "dataProductName"
 ```
 
 ```output
-{{ Add output here }}
+PrincipalId            PrincipalType Role   RoleAssignmentId RoleId UserName
+-----------            ------------- ----   ---------------- ------ --------
+user@microsoft.com     user          Reader confmq0f0zpu            User Name
 ```
 
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-{{ Add code here }}
-```
-
-```output
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
+Assign user role to the data product.

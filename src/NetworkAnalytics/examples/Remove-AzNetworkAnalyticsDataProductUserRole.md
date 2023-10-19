@@ -1,22 +1,7 @@
-### Example 1: {{ Add title here }}
+### Example 1: Remove user role from the data product.
+
 ```powershell
-{{ Add code here }}
+ Remove-AzNetworkAnalyticsDataProductUserRole -DataProductName "dataProductName" -ResourceGroupName "resourceGroupName" -Role Reader -PrincipalType user -RoleId "opinsightsdpqjydom/dataProductName/confmq0f0zpu" -PrincipalId "user@microsoft.com" -DataTypeScope "dataProductName" -RoleAssignmentId "confmq0f0zpu" -UserName "User Name"
 ```
 
-```output
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-{{ Add code here }}
-```
-
-```output
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
+ Remove user role from the data product.

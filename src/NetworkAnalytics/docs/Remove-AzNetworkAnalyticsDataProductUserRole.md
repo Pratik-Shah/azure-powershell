@@ -47,27 +47,12 @@ Remove role from the data product.
 
 ## EXAMPLES
 
-### Example 1: {{ Add title here }}
+### Example 1: Remove user role from the data product.
 ```powershell
-{{ Add code here }}
+ Remove-AzNetworkAnalyticsDataProductUserRole -DataProductName "dataProductName" -ResourceGroupName "resourceGroupName" -Role Reader -PrincipalType user -RoleId "opinsightsdpqjydom/dataProductName/confmq0f0zpu" -PrincipalId "user@microsoft.com" -DataTypeScope "dataProductName" -RoleAssignmentId "confmq0f0zpu" -UserName "User Name"
 ```
 
-```output
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-{{ Add code here }}
-```
-
-```output
-{{ Add output here }}
-```
-
-{{ Add description here }}
+Remove user role from the data product.
 
 ## PARAMETERS
 
@@ -118,7 +103,8 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-The credentials, account, tenant, and subscription used for communication with Azure.
+The DefaultProfile parameter is not functional.
+Use the SubscriptionId parameter when available if executing the cmdlet against a different subscription.
 
 ```yaml
 Type: System.Management.Automation.PSObject
@@ -329,29 +315,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### System.Boolean
 
 ## NOTES
-
-ALIASES
-
-COMPLEX PARAMETER PROPERTIES
-
-To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
-
-
-BODY <IRoleAssignmentDetail>: The details for role assignment response.
-  - `DataTypeScope <String[]>`: Data Type Scope at which the role assignment is created.
-  - `PrincipalId <String>`: Object ID of the AAD principal or security-group.
-  - `PrincipalType <String>`: Type of the principal Id: User, Group or ServicePrincipal
-  - `Role <DataProductUserRole>`: Data Product role to be assigned to a user.
-  - `RoleAssignmentId <String>`: Id of role assignment request
-  - `RoleId <String>`: Role Id of the Built-In Role
-  - `UserName <String>`: User name.
-
-INPUTOBJECT <INetworkAnalyticsIdentity>: Identity Parameter
-  - `[DataProductName <String>]`: The data product resource name
-  - `[DataTypeName <String>]`: The data type name.
-  - `[Id <String>]`: Resource identity path
-  - `[ResourceGroupName <String>]`: The name of the resource group. The name is case insensitive.
-  - `[SubscriptionId <String>]`: The ID of the target subscription.
 
 ## RELATED LINKS
 

@@ -20,44 +20,44 @@ function setupEnv() {
     $env.SubscriptionId = (Get-AzContext).Subscription.Id
     $env.Tenant = (Get-AzContext).Tenant.Id
     # For any resources you created for test, you should add it to $env here.
-    $env.Add("DataProductName", "pwshdataproductinstance01")
+    $env.Add("DataProductName", "dataproduct1")
+    $env.Add("DataProductNameForMaxSet", "dataproduct2")
     $env.Add("Product", "MCC")
     $env.Add("MajorVersion", "2.0.0")
     $env.Add("Publisher", "Microsoft")
-    $env.Add("Location", "westcentralus")
+    $env.Add("Location", "southcentralus")
     $env.Add("ResourceGroupName", "powershell-test")
 
-    # Need to remove this     
-    $env.Add("ManagedResourceGroupConfigurationLocation", $null)
-    $env.Add("ManagedResourceGroupConfigurationName", $null)
-
     # Default Settings
-    $env.Add("PurviewAccount", $null)
-    $env.Add("PurviewCollection", $null)
+    $env.Add("PurviewAccount", "/subscriptions/subscriptionId/resourceGroups/aw8-compute-resgrp/providers/Microsoft.Purview/accounts/AOI-Test-Instance")
+    $env.Add("PurviewCollection", "8m7kmz")
     $env.Add("Redundancy", "Disabled")
     $env.Add("CurrentMinorVersion", "2.0.0")
-    $env.Add("Tag", "")
-    $env.Add("Owner", "")
-    $env.Add("CustomerEncryptionKeyName", $null)
-    $env.Add("CustomerEncryptionKeyVaultUri", $null)
-    $env.Add("CustomerEncryptionKeyVersion", $null)
+    #$env.Add("Tag", $null )
+    $env.Add("Owner", @("testuser1@microsoft.com","testuser2@microsoft.com"))
+    $env.Add("CustomerEncryptionKeyName", "testadx")
+    $env.Add("CustomerEncryptionKeyVaultUri", "https://testkv.vault.azure.net")
+    $env.Add("CustomerEncryptionKeyVersion", "6adfebea181a443b90cc89362d5888b5")
     $env.Add("CustomerManagedKeyEncryptionEnabled", "Disabled")
 
     $env.Add("PublicNetworkAccess", "Enabled")
     $env.Add("PrivateLinksEnabled", "Disabled")
-    $env.Add("NetworkaclVirtualNetworkRule", "")
-    $env.Add("NetworkaclIPRule", "")
-    $env.Add("NetworkaclAllowedQueryIPRangeList", "")
+    #$env.Add("NetworkaclVirtualNetworkRule", $null)
+    #$env.Add("NetworkaclIPRule", $null)
+    $env.Add("NetworkaclAllowedQueryIPRangeList", @("1.1.1.1","2.2.2.2"))
     $env.Add("NetworkaclDefaultAction", "Allow")
-    $env.Add("IdentityType", "")
-    $env.Add("IdentityUserAssignedIdentity", "")
-
-    $env.Add("PrincipalId","user@microsoft.com")
+    $env.Add("IdentityType", "UserAssigned")
+    #$env.Add("IdentityUserAssignedIdentity",$null)
     $env.Add("RoleId", " ")
     $env.Add("Role", "Reader")
-    $env.Add("UserName", "User Name")
     $env.Add("PrincipalType", "user")
-    $env.Add("DataTypeScope", "pwshdataproductinstance01")
+    $env.Add("DataTypeScope", "dataproduct1")
+    $env.Add("RoleAssignmentId","confc9uee8dm")
+    
+    $env.Add("UserOnePrincipalId","testuser1@microsoft.com")
+    $env.Add("UserOneName", "Test User1")
+    $env.Add("UserTwoPrincipalId","testuser2@microsoft.com")
+    $env.Add("UserTwoName", "Test User2")
 
     $envFile = 'env.json'
     if ($TestMode -eq 'live') {
